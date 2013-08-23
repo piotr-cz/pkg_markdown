@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="2.5" method="upgrade">
+	<name>Markdown Package</name>
+	<packagename>markdown</packagename>
+	<version>0.2.1</version>
+	<url>http://piotr.cz</url>
+	<packager>piotr_cz</packager>
+	<packagerUrl>http://piotr.cz</packagerUrl>
+	<description>
+	<![CDATA[
+		Markdown package for Joomla!<br />
+		<small>Don't forget to enable 'Content - Markdown' <a href="index.php?option=com_plugins&filter_folder=content">Plugin in Plugin Manager</a></small>
+	]]>
+<!--
+		PKG_MARKDOWN_XML_DESCRIPTION
+-->
+	</description>
+
+<!--
+	<updateservers>
+		<server type="extension" priority="1" name="Linkfiles Package Update Site">http://extensions.piotr.cz/pkg_markdown/pkg_markdown-update.xml</server>
+	</updateservers>
+-->
+
+<!--
+	<scriptfile>markdown.scriptfile.php</scriptfile>
+-->
+
+	<files folder="packages">
+		<file type="library" id="phpmarkdown">lib_phpmarkdown</file>
+		<file type="plugin" id="markdown" group="content">plg_content_markdown</file>
+		<file type="plugin" id="markdown" group="editor">plg_editor_markdown</file>
+	</files>
+
+<!--
+	<languages folder="admin">
+		<language tag="en-GB">language/en-GB/en-GB.pkg_markdown.sys.ini</language>
+	</languages>
+-->	
+</extension>

@@ -1,0 +1,156 @@
+/**
+ * @package     Markdown
+ * @subpackage  Plugin.Editors.markdown
+ *
+ * @copyright   Copyright (C) 2013 piotr-cz, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+
+/**
+ * Panel (Buttons + Editor)
+ */
+.wmd-panel
+{
+	clear: both;
+}
+
+
+/**
+ * Buttons bar
+ */
+.wmd-button-bar
+{
+	width: 100%;
+	background-color: Silver;
+}
+	/** Override J! */
+	.wmd-button,
+	.wmd-spacer
+	{
+		padding: 0;
+	}
+
+	/** Row */
+	.wmd-button-row
+	{
+		position: relative;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		margin-top: 10px;
+		padding: 0px;
+		height: 20px;
+	}
+	/** Button */
+	.wmd-button
+	{
+		width: 20px;
+		height: 20px;
+		padding-left: 2px;
+		padding-right: 3px;
+		position: absolute;
+		display: inline-block;
+		list-style: none;
+		cursor: pointer;
+	}
+	.wmd-button > span
+	{
+		background-image: url('../images/wmd-buttons.png');
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+	}
+	/** Spacer */
+	.wmd-spacer
+	{
+		width: 1px;
+		height: 20px;
+		margin-left: 14px;
+
+		position: absolute;
+		background-color: Silver;
+		display: inline-block;
+		list-style: none;
+	}
+	.wmd-spacer1
+	{
+		left: 50px;
+	}
+	.wmd-spacer2
+	{
+		left: 175px;
+	}
+	.wmd-spacer3
+	{
+		left: 300px;
+	}
+
+.wmd-input,
+.wmd-preview
+{
+	padding: 3px;
+	margin-top: 0;
+
+	resize: both;
+
+	border: 1px solid DarkGray;
+
+            box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+/**
+ * Editor
+ */
+.wmd-input
+{
+	height: 300px;
+	width: 100%;
+
+	font-size: 1.25em;
+	line-height: 1.2em;
+	font-family: 'Consolas', 'Menlo', 'Monaco, Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+}
+
+
+/**
+ * Modal
+ */
+
+/** Background */
+.wmd-prompt-background
+{
+	background-color: Black;
+}
+
+/** Dialog */
+.wmd-prompt-dialog
+{
+	border: 1px solid #999999;
+	background-color: #F5F5F5;
+
+	font-size: initial;
+}
+	.wmd-prompt-dialog > div
+	{
+		font-size: 0.8em;
+		font-family: arial, helvetica, sans-serif;
+	}
+
+	.wmd-prompt-dialog > form > input[type="text"]
+	{
+		border: 1px solid #999999;
+		color: black;
+	}
+
+	.wmd-prompt-dialog > form > input[type="button"]
+	{
+		border: 1px solid #888888;
+		font-family: trebuchet MS, helvetica, sans-serif;
+		font-size: 0.8em;
+		font-weight: bold;
+	}

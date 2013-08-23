@@ -1,0 +1,112 @@
+/**
+ * @package     Markdown
+ * @subpackage  Plugin.Editors.markdown
+ *
+ * @copyright   Copyright (C) 2013 piotr-cz, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+/**
+ * Preview
+ */
+.wmd-preview
+{
+	clear: both;
+	padding: 3px;
+	border: 2px dotted #ccc;
+	font-size: 115%;
+	line-height: 130%;
+
+	overflow: auto;
+	background: lightYellow;
+}
+	/**
+	 * Preview styles
+	 */
+	.wmd-preview blockquote
+	{
+	/*
+		border-left: 2px dotted #888;
+		padding-left: 5px;
+		background: #d0f0ff;
+	*/
+		margin-bottom: 10px;
+		padding: 10px 10px 1px;
+		background-color: #eee;
+	}
+
+	.wmd-preview pre
+	{
+		padding: 5px;
+		margin-bottom: 10px;
+		overflow: auto;
+		width: auto;
+	}
+
+	.wmd-preview code
+	{
+		font-family: 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+		font-size: 1.1em;
+		background-color: #eee;
+	}
+
+	.wmd-preview h1,
+	.wmd-preview h2,
+	.wmd-preview h3
+	{
+		font-family: 'Trebuchet MS', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+		color: black;
+		font-weight: bold;
+		margin: 0 0 1em;
+		padding: 0;
+	}
+
+	.wmd-preview h1
+	{
+		font-size: 22px;
+		line-height: 24px;
+		margin: 0 0 10px;
+	}
+
+	.wmd-preview h2
+	{
+		font-size: 140%;
+	}
+
+	.wmd-preview h3
+	{
+		font-size: 110%;
+		line-height: 1.3em;
+	}
+
+	.wmd-preview ul,
+	.wmd-preview ol
+	{
+		margin-left: 30px;
+		margin-bottom: 1em;
+	}
+
+	.wmd-preview ol
+	{
+		list-style: decimal;
+	}
+
+	.wmd-preview ul
+	{
+		list-style: disc;
+	}
+
+	.wmd-preview li
+	{
+		list-style: inherit;
+		padding: initial;
+	}
+
+	.wmd-preview hr
+	{
+		border: 0;
+		color: #aaa;
+		background-color: #aaa;
+		height: 1px;
+		margin-bottom: 20px;
+	}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="library" version="2.5" method="upgrade">
+	<name>PHP Markdown</name>
+	<libraryname>phpmarkdown</libraryname>
+	<version>1.0.1p</version>
+	<description>
+	<![CDATA[
+		PHP Markdown is a port to PHP of the Markdown perl script by John Gruber; <br />
+		PHP Markdown Extra adds new features to Markdown and is maintained in a separate "extra" branch.
+	]]>
+	</description>
+	<creationDate>2004</creationDate>
+	<copyright>
+	<![CDATA[
+		PHP Markdown &amp; Extra
+		Copyright (c) 2004-2013 Michel Fortin
+		<http://michelf.ca/projects/php-markdown/>
+
+		Original Markdown
+		Copyright (c) 2004-2006 John Gruber
+		<http://daringfireball.net/projects/markdown/>
+	]]>
+	</copyright>
+	<licence>https://github.com/michelf/php-markdown/blob/lib/License.md GNU/GPL/ http://www.opensource.org/licenses/bsd-license.php BSD License</licence>
+	<author>2004-2013 Michel Fortin, 2004-2006 John Gruber</author>
+	<authorEmail>michel.fortin@michelf.ca</authorEmail>
+	<authorUrl>http://michelf.ca/projects/php-markdown/</authorUrl>
+	<packager>piotr_cz</packager>
+	<packageurl>http://www.joomla.org</packageurl>
+
+	<files folder="libraries">
+		<folder>php-markdown-lib</folder>
+		<file>markdown.php</file>
+		<file>index.html</file>
+	</files>
+
+</extension>

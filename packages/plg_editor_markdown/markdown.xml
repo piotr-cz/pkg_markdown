@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="editors" method="upgrade">
+	<name>plg_editors_markdown</name>
+	<version>0.2.1</version>
+	<creationDate>February 2013</creationDate>
+	<author>John Fraser (Attacklab)</author>
+	<authorEmail>N/A</authorEmail>
+	<authorUrl>https://code.google.com/p/pagedown/</authorUrl>
+	<copyright>
+		Original Showdown code copyright (c) 2007 John Fraser
+		Modifications and bugfixes (c) 2009 Dana Robinson
+		Modifications and bugfixes (c) 2009-2011 Stack Exchange Inc.
+	</copyright>
+	<license>MIT</license>
+	<description>PLG_EDITORS_MARKDOWN_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="markdown">markdown.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<media destination="editors/markdown" folder="media">
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+		<filename>convert.php</filename>
+	</media>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_editors_markdown.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_editors_markdown.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<!-- Show Preview -->
+				<field
+					name="show_preview"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="PLG_EDITORS_MARKDOWN_SHOW_PREVIEW_LABEL"
+					description="PLG_EDITORS_MARKDOWN_SHOW_PREVIEW_DESC"
+				>
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+					<option disabled="true">Server-side</option>
+				</field>
+
+				<!-- Show Help -->
+				<field
+					name="show_help"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="PLG_EDITORS_MARKDOWN_SHOW_HELP_LABEL"
+					description="PLG_EDITORS_MARKDOWN_SHOW_HELP_DESC"
+				>
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+
+				<!-- Output Format -->
+				<field
+					name="output_format"
+					type="radio"
+					class="btn-group"
+					default="md"
+					label="PLG_EDITORS_MARKDOWN_OUTPUT_FORMAT_LABEL"
+					description="PLG_EDITORS_MARKDOWN_OUTPUT_FORMAT_DESC"
+				>
+					<option value="md">PLG_EDITORS_MARKDOWN_OUTPUT_FORMAT_OPTION_MARKDOWN</option>
+					<option value="html">PLG_EDITORS_MARKDOWN_OUTPUT_FORMAT_OPTION_HTML</option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

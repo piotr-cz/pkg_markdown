@@ -1,0 +1,6 @@
+0.2.2
++ Context filtering
+
+0.2.1
++ Fixed PHP Strict standards and most of Joomla Code style
++ Option to choose transport adapter

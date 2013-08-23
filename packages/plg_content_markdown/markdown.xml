@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+	<name>plg_content_markdown</name>
+	<author>piotr_cz</author>
+	<creationDate>February 2013</creationDate>
+	<copyright>Copyright (C) 2013 piotr_cz. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>hello@piotr.cz</authorEmail>
+	<authorUrl>www.piotr.cz</authorUrl>
+	<version>0.2.2</version>
+	<description>PLG_CONTENT_MARKDOWN_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="markdown">markdown.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_content_markdown.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_content_markdown.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+
+			<!-- Basic Options -->
+			<fieldset
+				name="basic"
+			>
+				<!-- Process -->
+				<field
+					name="process"
+					type="radio"
+					default="1"
+					class="btn-group"
+					label="PLG_CONTENT_MARKDOWN_FIELD_PROCESS_GLOBAL_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_GLOBAL_PROCESS_DESC"
+				>
+					<option value="1">JALL</option>
+					<option value="-1">JNONE</option>
+				</field>
+
+				<!-- Whitelist or Blacklist contexts -->
+			<!--
+				<field
+					name="contexts_type"
+					type="radio"
+					default="cwl"
+					class="btn-group"
+					label="PLG_CONTENT_MARKDOWN_FIELD_CONTEXTS_FILTERING_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_CONTEXTS_FILTERING_DESC"
+				>
+					<option value="none">PLG_CONTENT_MARKDOWN_FIELD_CONTEXTS_FILTERING_OPTION_NOFILTERING</option>
+					<option value="cbl">PLG_CONTENT_MARKDOWN_FIELD_CONTEXTS_FILTERING_OPTION_BLACKLIST</option>
+					<option value="cwl">PLG_CONTENT_MARKDOWN_FIELD_CONTEXTS_FILTERING_OPTION_WHITELIST</option>
+				</field>
+			-->
+
+				<!-- Whitelisted contexts -->
+				<field
+					name="contexts_custom"
+					type="textarea"
+					default="com_content, com_categories, com_modules"
+					label="PLG_CONTENT_MARKDOWN_FIELD_CONTEXTS_CUSTOM_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_CONTEXTS_CUSTOM_DESC"
+				/>
+			</fieldset>
+
+
+			<!-- Styling options -->
+		<!--
+			<fieldset
+				name="styles"
+			>
+				<field
+					name="style"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="style"
+					description="To overwrite place file /css/editors/markdown/Markdown.preview.css"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		-->
+
+
+			<!-- Advanced Options -->
+			<fieldset
+				name="externalfiles"
+				label="PLG_CONTENT_MARKDOWN_FIELDSET_EXTERNALFILES_LABEL"
+			>
+
+				<!-- Cascade Headings -->
+			<!--
+				<field
+					name="hedings"
+					type="list"
+					default="0"
+				>
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</field>
+			-->
+
+				<!-- Remove H1 from fetched files -->
+				<field
+					name="remove_h1"
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="PLG_CONTENT_MARKDOWN_FIELD_REMOVE_H1_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_REMOVE_H1_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+
+				<!-- Allowed extensions -->
+				<field
+					name="md_extensions"
+					type="text"
+					default=",md,MARKDOWN,txt"
+					label="PLG_CONTENT_MARKDOWN_FIELD_ALLOWEDEXTS_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_ALLOWEDEXTS_DESC"
+				/>
+
+				<!-- JHttp Adapter -->
+				<field
+					name="jhttp_adapter"
+					type="filelist"
+					class="btn-group"
+					default="auto"
+					label="PLG_CONTENT_MARKDOWN_FIELD_JHTTP_ADAPTER_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_JHTTP_ADAPTER_DESC"
+					directory="libraries/joomla/http/transport/"
+					filter=".*\.php$"
+					stripext="true"
+					hide_none="true"
+					hide_default="true"
+				>
+					<option value="auto">JGLOBAL_AUTO</option>
+				</field>
+
+				<!-- Caching -->
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="PLG_CONTENT_MARKDOWN_FIELD_CACHING_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_CACHING_DESC"
+				>
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+
+				<!-- Cache Time -->
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="PLG_CONTENT_MARKDOWN_FIELD_CACHE_TIME_LABEL"
+					description="PLG_CONTENT_MARKDOWN_FIELD_CACHE_TIME_DESC"
+				/>
+
+				<!-- Clean Cache -->
+				<field
+					name="cache_clean"
+					type="spacer"
+					label="PL_CONTENT_MARKDOWN_FIELD_CACHE_CLEAN_LABEL"
+					description="PL_CONTENT_MARKDOWN_FIELD_CACHE_CLEAN_DESC"
+				/>
+
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>
