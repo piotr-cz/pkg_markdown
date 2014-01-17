@@ -69,7 +69,7 @@ class plgEditorMarkdown extends plgEditorNone // JPlugin
 	/**
 	 * Copy editor content to form field.
 	 * 
-	 * @param   string  $id  The id of the editor field.
+	 * @param   string  $id  The id of the editor field. Note: doesn't exist in PlgEditorNone
 	 *
 	 * @return  string  Javascript
 	 * 
@@ -79,10 +79,18 @@ class plgEditorMarkdown extends plgEditorNone // JPlugin
 	 * 
 	 * Markdown.converter ignores images with paths to relative files.
 	 */
-	public function onSave($id)
+	public function onSave()
 	{
 		// Plain MD
 		if ($this->params->get('output_format', 'md') != 'html')
+		{
+			return;
+		}
+
+		// Retrieve an editor ID.
+		$id = func_get_arg(0);
+
+		if ($id === false)
 		{
 			return;
 		}
@@ -140,13 +148,15 @@ SCRIPT;
 
 	/**
 	 * Adds the editor specific insert method.
+	 *
+	 * @param   integer  $id  Editor Id
 	 * 
 	 * @return  boolean
 	 * 
 	 * @note  When code is in javascript file, this should be much easier.
 	 * @note  to add title to image use (?: title=("[^"]*"))? -> (.. "Optional title")
 	 */
-	public function onGetInsertMethod()
+	public function onGetInsertMethod($id)
 	{
 		static $done = false;
 
