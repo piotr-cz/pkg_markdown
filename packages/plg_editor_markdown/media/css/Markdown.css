@@ -10,7 +10,23 @@
 /**
  * Panel (Buttons + Editor)
  */
-.wmd-panel
+.wmd-panel.wmd-position-below
+{
+	clear: both;
+}
+
+.wmd-panel.wmd-position-side
+{
+	width: 50%;
+	float: left;
+}
+.wmd-preview.wmd-position-side
+{
+	float: right;
+	margin-top: 35px;
+	clear: none;
+}
+.wmd-preview.wmd-position-side + .btn-toolbar
 {
 	clear: both;
 }
