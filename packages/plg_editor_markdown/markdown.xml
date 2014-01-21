@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="2.5" type="plugin" group="editors" method="upgrade">
 	<name>plg_editors_markdown</name>
-	<version>0.2.1</version>
+	<version>0.2.2</version>
 	<creationDate>February 2013</creationDate>
 	<author>John Fraser (Attacklab)</author>
 	<authorEmail>N/A</authorEmail>
@@ -47,6 +47,19 @@
 					<option value="0">JOFF</option>
 					<option value="1">JON</option>
 					<option disabled="true">Server-side</option>
+				</field>
+
+				<!-- Preview Position -->
+				<field
+					name="preview_position"
+					class="btn-group"
+					type="radio"
+					label="PLG_EDITORS_MARKDOWN_PREVIEW_POSITION_LABEL"
+					description="PLG_EDITORS_MARKDOWN_PREVIEW_POSITION_DESC"
+					default="below"
+				>
+					<option value="below">PLG_EDITORS_MARKDOWN_PREVIEW_POSITION_OPTION_BELOW</option>
+					<option value="side">PLG_EDITORS_MARKDOWN_PREVIEW_POSITION_OPTION_SIDE</option>
 				</field>
 
 				<!-- Show Help -->

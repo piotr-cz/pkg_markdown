@@ -155,6 +155,7 @@ SCRIPT;
 	 * 
 	 * @note  When code is in javascript file, this should be much easier.
 	 * @note  to add title to image use (?: title=("[^"]*"))? -> (.. "Optional title")
+	 * @note  workaround to trick Joomla SEF plugin parser
 	 */
 	public function onGetInsertMethod($id)
 	{
@@ -167,19 +168,21 @@ SCRIPT;
 		}
 
 		$done = true;
+
 		JFactory::getDocument()->addScriptDeclaration(
 <<<SCRIPT
+
 	function jInsertEditorText( text, editor )
 	{
 		// Parse Image HTML > MD
 		if ( !text.indexOf('<img '))
 		{
-			text = text.replace( /<img src="([^"]*)" alt="([^"]*)"[^\/]*\/>/gmi, "![$2]($1)" );
+			text = text.replace( new RegExp('<img src' + '="([^"]*)" alt="([^"]*)"[^\/]*\/>', 'gmi'), "![$2]($1)" );
 		}
 		// Parse Anchor HTML > MD
 		else if ( !text.indexOf('<a '))
 		{
-			text = text.replace( /<a href="([^"]*)"[^>]*>([^<]*)<\/a>/gmi, "[$2]($1)" );
+			text = text.replace( new RegExp('<a href' + '="([^"]*)"[^>]*>([^<]*)<\/a>', 'gmi'), "[$2]($1)" );
 		}
 
 		insertAtCursor( document.getElementById( 'wmd-input_' + editor ), text );
@@ -245,16 +248,33 @@ SCRIPT
 		// Must pass the field id to the buttons in this editor.
 		$html_buttons 	.= $this->_displayButtons($id, $buttons, $asset, $author);
 
+		// Get preview position
+		$preview_pos 	= $this->params->get('preview_position', 'below');
+
+
 		// Get preview area
 		if ($show_preview)
 		{
+			// Compute width
+			if ($preview_pos == 'side')
+			{
+				$value = (int) $width;
+				$unit = substr($width, strlen($value));
+
+				$xWidth = $value / 2 . $unit;
+			}
+			else
+			{
+				$xWidth = $width;
+			}
+
 			$html_buttons	.= $this->_toogleButton($id);
-			$html_preview	.= '<div id="wmd-preview_' . $id . '" class="wmd-panel wmd-preview" style="max-height:' . $height . '; width:' . $width . '"></div>';
+			$html_preview	.= '<div id="wmd-preview_' . $id . '" class="wmd-panel wmd-preview wmd-position-' . $preview_pos . '" style="max-height:' . $height . '; width:' . $xWidth . '"></div>';
 		}
 
 		// Build panel markup
 		$html = <<<HTML
-	<div class="wmd-panel">
+	<div class="wmd-panel wmd-position-{$preview_pos}">
 		<div id="wmd-button-bar_{$id}"></div>
 		<textarea name="{$name}" class="wmd-input" id="wmd-input_{$id}" cols="{$col}" rows="{$row}" style="width: {$width}; height: {$height};">{$content}</textarea>
 	</div>
@@ -392,7 +412,7 @@ TOGGLE_BTN;
 		}
 
 		// Translation strings
-		$string = array_flip(
+		$strings = array_flip(
 			array(
 				'bold', 'boldexample',
 				'italic', 'italicexample',

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extensionset name="Markdown extensions set" description="">
+	<extension name="Markdown Package" element="pkg_markdown" type="package" version="0.2.3" detailsurl="https://raw.github.com/piotr-cz/pkg_markdown/master/update/pkg_markdown.xml" />
+</extensionset>

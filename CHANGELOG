@@ -1,3 +1,8 @@
+0.2.3
++ Fixed strict warnings in plugin due to parent class incompatibility
++ Fixed PHP errors
++ Plugin option: Preview Side by Side
+
 0.2.2
 + Context filtering
 
